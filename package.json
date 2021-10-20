@@ -1,0 +1,20 @@
+{
+  "name": "generator-grava-react-web",
+  "version": "1.0.0",
+  "description": "Generador de estructura base de webs React",
+  "files": [
+    "app"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "yeoman-generator": "^5.4.2",
+    "yosay": "^2.0.2"
+  },
+  "main": "index.js",
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC"
+}
