@@ -1,7 +1,9 @@
 {
-  "name": "generator-grava-react-web",
+  "name": "@grava.io/generator-grava-react-web",
   "version": "1.0.0",
   "description": "Generador de estructura base de webs React",
+  "homepage": "https://github.com/gravadigital/generator-grava-react-web#readme",
+  "author": "Lautaro Alvarez <lautaro@grava.digital>",
   "files": [
     "app"
   ],
@@ -15,6 +17,8 @@
   },
   "main": "index.js",
   "devDependencies": {},
-  "author": "",
-  "license": "ISC"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gravadigital/generator-grava-react-web/issues"
+  }
 }
