@@ -1,8 +1,8 @@
-const Generator = require('yeoman-generator');
+const AdminGenerator = require('./admin');
 const chalk = require('chalk');
 const yosay = require('yosay');
 
-module.exports = class extends Generator {
+module.exports = class extends AdminGenerator {
   constructor(args, opts) {
     super(args, opts);
 
@@ -19,28 +19,36 @@ module.exports = class extends Generator {
       {
         type: "input",
         name: "name",
-        message: "Your project name",
-        default: this.appname
+        message: "Your project name"
+      },
+      {
+        type: "list",
+        name: "mode",
+        message: "Project mode",
+        choices: [{
+          name: 'Front user web',
+          value: 'user'
+        }, {
+          name: 'Admin or dashboard',
+          value: 'admin'
+        }],
+        default: 'admin'
       }
     ]);
 
     this.configs.APP_NAME = answers.name;
+    this.configs.APP_MODE = answers.mode;
     this.destinationRoot(this.configs.APP_NAME);
   }
 
-  base() {
-    console.log('this.sourceRoot()', this.sourceRoot());
-    this.sourceRoot(this.sourceRoot() + '/../00-base');
-    this.fs.copyTpl(
-      this.templatePath(''),
-      this.destinationPath(''),
-      this.configs,
-      {},
-      {globOptions: {dot: true}}
-    );
-    this.fs.copy(
-      this.templatePath('../_gitignore'),
-      this.destinationPath('.gitignore')
-    );
+  modeSplit() {
+    switch (this.configs.APP_MODE) {
+      case 'user':
+        this.user()
+        break;
+      case 'admin':
+        this.admin()
+        break;
+    }
   }
 };

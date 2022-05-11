@@ -1,6 +1,6 @@
 {
   "name": "@grava.io/generator-grava-react-web",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Generador de estructura base de webs React",
   "homepage": "https://github.com/gravadigital/generator-grava-react-web#readme",
   "author": "Lautaro Alvarez <lautaro@grava.digital>",
